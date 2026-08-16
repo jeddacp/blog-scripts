@@ -766,3 +766,8 @@ details[open] > summary {border-bottom: 3px double var(--strong-bold-color);}
 #blog-archive-info {
   color: color-mix(in srgb, var(--text-color), transparent 40%);
 }
+
+/* add no tags to certain pages */
+.no-tags .tags {
+  display: none;
+}
