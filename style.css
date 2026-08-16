@@ -1,0 +1,768 @@
+@import url(https://fonts.bunny.net/css?family=alatsi:400|amaranth:400|poppins:600|victor-mono:200,200i);
+
+
+
+:root {
+  --width: 720px;
+  --font-main: 'Victor Mono', monospace, sans-serif;
+  --font-secondary: 'Alatsi', sans-serif;
+  --font-scale: 14px;
+  --background-color: light-dark(#f5f3f4, #212529);
+  --accent-color: light-dark(#E9ECEF, #343a40);
+  --heading-color: light-dark(#222, #f5f3f4);
+  --caption-color: light-dark(#495057, #adb5bd);
+  --text-color: light-dark(#444, #ffffff);
+  --link-color: light-dark(#006C67, #f9c784);
+  --code-background-color: light-dark(#f2f2f2, #ced4da);
+  --code-color: light-dark(#222, #222); /* Same in both, but good to be explicit */
+  --h4-background-color: light-dark(#187e75, #495057);
+  --h4-text-color: light-dark(#ffffff, #ffffff);
+  --h5-background-color: light-dark(#ffffff, #0C1821);
+  --h5-border-color: light-dark(#0C1821, #C3B597);
+  --h5-text-color: light-dark(#444, #ffffff);
+  --h5-background-hover-color: light-dark(#006C67, #f9c784);
+  --h5-hover-text-color: light-dark(#fff, #0C1821);
+  --strong-bold-color: light-dark(#003b6c, #ccc9dc);
+  --highlight-color: light-dark(#F9E076, #F9E076); /* Same in both */
+  --highlight-link: light-dark(#363457, #363457); /* Same in both */
+  --upvote-count-color: light-dark(#000, #ffffff);
+  --nav-textcolor-hover: light-dark(#ffffff, #0C1821);
+  --spacing: 4px; /* Only in root, no dark mode equivalent provided */
+  --space-block: 2rem; /*gbook*/
+  --radius: 8px; /*gbook*/
+  --font-small: 0.875rem; /*gbook*/
+}
+
+/* Base styling for the toggle icons */
+#preferdark,
+#preferlight {
+  font-size: 1.2em; /* Keeping size for footer */
+  text-decoration: none;
+  cursor: pointer;
+  z-index: 1000;
+  color: var(--text-color);
+  margin: 0 5px; /* Add margin here as well for spacing in the footer */
+}
+
+/* Style for hover state */
+#preferdark:hover,
+#preferlight:hover {
+  color: var(--link-color);
+}
+
+.footer-links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5px 0;
+  color: var(--text-color);
+}
+
+.footer-links-wrapper a {
+  margin: 0;
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+
+body {
+    font-family: var(--font-main);
+    font-size: var(--font-scale);
+    font-style: italic-liga;
+    font-weight: semibold;
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+    
+}
+
+
+small {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: var(--caption-color);
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: amaranth;
+    color: var(--heading-color);
+    letter-spacing: 1px;
+    margin-bottom: 1px;
+    
+}
+
+h2 {
+    border-bottom: 1px solid;
+    line-height: 1.25;
+}
+
+/*h4 with highlight*/
+h4 {
+  background-color: var(--h4-background-color);
+  color: var(--h4-text-color);
+  padding: 5px 10px 5px 10px; /* top, right, bottom, left */
+  border-radius: 2px; /* Change the value for more or less rounding */
+}
+
+/*h5 as a button*/
+h5 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+} 
+  
+h5 a {
+  cursor: pointer;
+  border: 1px solid var(--h5-border-color);
+  padding: 5px 10px; 
+  background-color: var(--h5-background-color);
+  text-decoration: none;
+  color: var(--h5-text-color);
+}
+
+h5 a:hover {
+  background-color: var(--h5-background-hover-color);
+  color: var(--h5-hover-text-color);
+}
+
+a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+}
+
+/*external links*/
+a[href^="http"]:where(:not([href*="notes.jeddacp.com/"]))::after {
+    content: "↗"
+}
+
+a:hover {
+    text-decoration: underline; 
+}
+
+/*nav a {
+    margin-right: 8px;
+}*/
+
+/* Navigation */
+nav {
+  margin-right: 2px;
+  margin-bottom: 10px;
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-family: poppins;
+}
+
+nav p {
+  margin: 2px;
+}
+  
+
+
+nav a {
+  color: var(--link-color);
+  margin: 3px 1px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: var(--link-color);
+  color: var(--nav-textcolor-hover); 
+} 
+
+strong, b {
+    color: var(--strong-bold-color);
+}
+
+button {
+    margin: 0;
+    cursor: pointer;
+}
+
+time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+}
+
+main {
+    line-height: 1.6;
+}
+
+table {
+    width: 100%;
+}
+
+hr {
+    border: 0;
+    border-top: 1px dashed;
+}
+
+
+
+img {
+    max-width: 100%;
+}
+
+code {
+    font-family: monospace;
+    padding: 2px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+}
+
+blockquote {
+  background: var(--accent-color);
+  color: var(--text-color);
+  margin: 25px 0;
+  padding: 2px 25px;
+  border-radius: 10px;
+}
+
+blockquote strong, blockquote b {
+  color: var(--strong-bold-color); 
+}
+
+blockquote a {
+    color: var(--link-color); 
+    text-decoration: strong; 
+}
+
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+}
+
+footer span {
+  display: none;
+}
+
+footer span#footer-directive {
+  display: inline; 
+}
+
+footer hr {
+  border: 0; 
+  border-top: 2px solid;
+  border-color: var(--accent-color);
+}
+
+.title:hover {
+    text-decoration: none;
+}
+
+
+.title {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  margin-top: 20px;
+  margin-bottom: 0px
+}
+
+.title::before {
+  content: '';
+  display: inline-block;
+  width: 2em;
+  height: 2em;
+  background-image: url('https://bear-images.sfo2.cdn.digitaloceanspaces.com/jedda/notesbyjc_logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-right: 0.5em;
+  transition: transform 0.6s ease;
+}
+
+.title h1 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+
+.inline {
+    width: auto !important;
+}
+
+.highlight, .code {
+    padding: 1px 15px;
+    background-color: var(--code-background-color);
+    color: var(--code-color);
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+}
+
+/*---Highlight---*/ 
+mark { background-color: var(--highlight-color); }
+
+mark a {
+    color: var(--highlight-link); 
+    text-decoration: underline;  
+}
+
+/*embedded posts*/
+ul.embedded.blog-posts li {
+  display: block;
+  border: none;
+}
+
+/* Box containing post content */
+.status ul.embedded.blog-posts li {
+    border: 1px solid var(--accent-color);
+    background-color: var(--accent-color);
+    margin-top: 1.25em;
+    padding: 1.25em;
+    display: flex;
+    flex-direction: column-reverse; /* Reverse content order */
+}
+/* Hide title & link */
+.status ul.embedded.blog-posts li > a {
+    display: none;
+}
+/* Remove extra space above content */
+.status ul.embedded.blog-posts li div p:first-child {
+    margin-top: 0;
+}
+
+/* blog post list */
+ul.blog-posts {
+  margin: 5px 0 20px;
+  padding: 0;
+}
+
+ul.blog-posts li {
+  overflow: hidden;
+  padding: 1.5px 0;
+  padding-right: 2px;
+  border-top: 1px solid var(--text-color);display: flex;
+}
+
+ul.blog-posts li:last-child {
+  border-bottom: 1px solid var(--text-color);
+}
+
+ul.blog-posts li a {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: calc(100% - 100px);
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+/*ul.blog-posts li span {
+    flex: 0 0 100px;
+}*/
+
+ul.blog-posts li time {
+  margin: 3px 0 0;
+  font-size: var(--font-scale);
+}
+
+/* Styles for tables */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    padding: 0.6em 0.7em;
+    text-align: left;
+    font-weight: 700;
+    background: color-mix(in srgb, var(--text-color), var(--background-color) 92%);
+}
+
+td {
+    padding: 0.5em 0.7em;
+    text-align: left;
+    border-block-end: 1px solid color-mix(in srgb, var(--text-color), transparent 85%);
+}
+
+/*toast button*/
+
+.upvote-button svg { display: none; }
+
+.upvote-button { 
+  display: block !important; 
+  background: transparent; /* Removes the dark inner background */
+  border: none;            /* Removes the outer default border */
+  padding: 0;              /* Removes extra spacing around your ::before element */
+}
+
+
+.upvote-button::before {
+  content: "♡ Like this post ";
+  background: #f8f8f8;
+  color: black;
+  border: 1.2px solid gray;
+  padding: 1px 2px;
+  border-radius: 4px;
+}
+.upvote-button:hover::before { background-color: #f8f8f8; }
+
+.upvote-button[disabled] { color: inherit !important; }
+.upvote-button[disabled]::before {
+  content: "♥ Liked";
+  background: #dfdfdf;
+}
+
+.upvote-count {
+  display: none; 
+}
+
+.upvote-count { font-size: inherit }
+.upvote-count::before { content: " - "; }
+.upvote-count::after { content: " like(s)"; }
+
+details {
+  padding: 7px;
+  padding-left: 10px;
+  background-color: var(--accent-color);
+  border: 1px dashed var(--strong-bold-color);
+  margin-left: 2px;
+  border-radius: 3px;
+}
+
+summary {
+  cursor: pointer;
+  padding: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+summary::marker {
+  color: var(--link-color);
+  font-size: var(--font-scale);
+}
+
+details[open] > summary {border-bottom: 3px double var(--strong-bold-color);}
+
+.footnotes {
+    margin-top: 1em;             /* Space above the footnotes section */
+    border-top: 1px solid #ccc;   /* Optional separator from main content */
+    border-bottom: 1px solid #ccc;
+    padding-top: 0.5em;             /* Space between the border and first footnote */
+    font-size: 0.9em; 
+}
+
+.footnotes p {
+    margin: 0.2em 0;               /* Vertical spacing between each footnote */
+    line-height: 1.4;           
+}
+
+.tags::before {
+  content: "🏷️";
+}
+
+/* side by side images */
+.image-container {
+  display: flex;
+  justify-content: space-between; /* or space-around, or center */
+  gap: 15px; /* This creates space between the images */
+  flex-wrap: wrap; /* This allows images to stack on small screens */
+}
+
+.image-wrapper {
+  flex: 1; /* This makes the images share the space equally */
+  min-width: 250px; /* Prevents images from getting too small */
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block; /* Removes extra space below the image */
+}
+
+.crisp-image-button {
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -o-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    -ms-interpolation-mode: nearest-neighbor; /* For IE */
+    cursor: pointer; 
+    transition: transform 0.1s ease-in-out, opacity 0.1s ease-in-out; /* Smooths out hover effects */
+}
+
+/* lightbox */ 
+/* Bear gallery lightbox */
+.bear-gallery {
+  margin-block: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 0.6rem;
+}
+
+.bear-gallery-item {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.bear-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  object-fit: cover;
+}
+
+.bear-gallery-item:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .bear-gallery-item:hover img {
+    opacity: 0.7;
+  }
+}
+
+@media (min-width: 900px) {
+  .bear-gallery {
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  }
+}
+
+.bear-gallery-lightbox {
+  margin: 0;
+  padding: 1.25rem;
+  border: 0;
+  background: transparent;
+}
+
+.bear-gallery-lightbox[open] {
+  position: fixed;
+  inset: 0;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  display: grid;
+  place-items: center;
+}
+
+.bear-gallery-lightbox::backdrop {
+  background: rgba(0, 0, 0, 0.86);
+}
+
+.bear-gallery-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.bear-gallery-figure img {
+  max-width: 90vw;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  margin: 0;
+}
+
+.bear-gallery-caption {
+  margin-block-start: 0.75rem;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9em;
+  text-align: center;
+}
+
+.bear-gallery-close {
+  position: absolute;
+  inset-block-start: 0.9rem;
+  inset-inline-end: 0.9rem;
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.bear-gallery-prev,
+.bear-gallery-next {
+  display: none;
+}
+
+@media (hover: hover) {
+  .bear-gallery-prev,
+  .bear-gallery-next {
+    position: absolute;
+    inset-block: 0;
+    display: grid;
+    place-items: center;
+    width: 3rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+  }
+
+  .bear-gallery-prev {
+    inset-inline-start: 0;
+  }
+
+  .bear-gallery-next {
+    inset-inline-end: 0;
+  }
+
+  .bear-gallery-prev:hover,
+  .bear-gallery-next:hover {
+    opacity: 1;
+  }
+}
+
+.bear-gallery-prev:focus-visible,
+.bear-gallery-next:focus-visible {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset-block: 0;
+  width: 3rem;
+  opacity: 1;
+  outline: 2px solid #fff;
+  outline-offset: -2px;
+}
+
+.bear-gallery-prev:focus-visible {
+  inset-inline-start: 0;
+}
+
+.bear-gallery-next:focus-visible {
+  inset-inline-end: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bear-gallery-prev,
+  .bear-gallery-next {
+    transition: none;
+  }
+}
+
+/* archive styling */
+
+/* Blog archive */
+
+#blog-archive {
+  margin-block: 1.5rem 0;
+}
+
+#blog-archive p {
+  margin-block: 1.2rem;
+}
+
+#blog-archive h3 {
+  margin-block-start: 1.8rem;
+}
+
+#blog-archive-year,
+#blog-archive-search {
+  font: inherit;
+  color: var(--text-color);
+  background-color: color-mix(in srgb, var(--background-color), var(--text-color) 6%);
+  border: 1px solid color-mix(in srgb, var(--text-color), transparent 75%);
+  border-radius: 2px;
+  padding-block: 0.3em;
+  padding-inline: 0.5em;
+  font-size: 0.9em;
+  appearance: none;
+}
+
+#blog-archive-year {
+  padding-inline-end: 2em;
+  background-image: linear-gradient(45deg, transparent 50%, var(--text-color) 50%),
+    linear-gradient(135deg, var(--text-color) 50%, transparent 50%);
+  background-position: calc(100% - 1.1em) center, calc(100% - 0.8em) center;
+  background-size: 0.3em 0.3em, 0.3em 0.3em;
+  background-repeat: no-repeat;
+}
+
+#blog-archive-search {
+  margin-inline-start: 0.6em;
+  min-width: 11rem;
+}
+
+#blog-archive-year:focus-visible,
+#blog-archive-search:focus-visible {
+  outline: 2px solid var(--link-color);
+  outline-offset: 1px;
+}
+
+#blog-archive-empty {
+  color: color-mix(in srgb, var(--text-color), transparent 40%);
+}
+
+#blog-archive-pagination {
+  margin-block-end: 0 !important;
+  padding-block-start: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.6em;
+}
+
+#blog-archive-pagination[hidden] {
+  display: none;
+}
+
+#blog-archive-prev,
+#blog-archive-next {
+  padding: 0;
+  background: none;
+  border: 0;
+  font: inherit;
+  color: var(--link-color);
+  cursor: pointer;
+}
+
+#blog-archive-prev::before {
+  content: "\00AB ";
+}
+
+#blog-archive-next::after {
+  content: " \00BB";
+}
+
+#blog-archive-prev:disabled,
+#blog-archive-next:disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+#blog-archive-info {
+  color: color-mix(in srgb, var(--text-color), transparent 40%);
+}
