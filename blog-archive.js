@@ -1,4 +1,4 @@
-<script>
+
 /*
  Plugin name: Blog archive
  Description: Groups blog posts by month with year filtering, search, and pagination.
@@ -378,5 +378,4 @@ const parseDatetime = (dt) => {
   }
 
 })();
-</script>
 
