@@ -1,4 +1,3 @@
-<script>
 document.addEventListener('DOMContentLoaded', function () {
   if (window.__bearGalleryLightbox) return
   window.__bearGalleryLightbox = true
@@ -134,4 +133,3 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }, { passive: true })
 })
-</script>
