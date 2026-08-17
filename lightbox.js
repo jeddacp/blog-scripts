@@ -82,10 +82,6 @@ document.addEventListener('DOMContentLoaded', function () {
   prevBtn.onclick = function () { updateLb(currentIndex - 1) }
   nextBtn.onclick = function () { updateLb(currentIndex + 1) }
 
-  dialog.addEventListener('click', function (e) {
-    if (e.target === dialog || e.target.classList.contains('bear-gallery-figure')) dialog.close()
-  })
-
   dialog.addEventListener('keydown', function (e) {
     if (e.key === 'ArrowRight') updateLb(currentIndex + 1)
     if (e.key === 'ArrowLeft') updateLb(currentIndex - 1)
