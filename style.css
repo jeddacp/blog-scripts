@@ -771,3 +771,30 @@ details[open] > summary {border-bottom: 3px double var(--strong-bold-color);}
 .no-tags .tags {
   display: none;
 }
+
+/*add previous next blog post titles*/
+.post-footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+a.previous-post,
+a.next-post {
+  font-size: 0;
+}
+
+a.previous-post::before,
+a.next-post::before {
+  font-size: var(--font-scale);
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+a.previous-post::before {
+  content: "← " attr(title);
+}
+
+a.next-post::before {
+  content: attr(title) " →";
+}
